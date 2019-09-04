@@ -24,6 +24,7 @@ $( document ).ready(function() {
             var animals = $("#topicInput").val().trim();
             if (animals == ""){
                 return false;
+                
             }
             topic.push(animals);
     
@@ -37,6 +38,7 @@ $( document ).ready(function() {
         $("removeGif").on("click", function() {
             topic.pop(animals);
             displayGifButtons();
+            console.log()
             return false;
         });
     
@@ -47,7 +49,7 @@ $( document ).ready(function() {
     function displayGifs() {
         var animals
          = $(this).attr("data-name");
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animals + "api_key=pO6Zp341poKDj3yt9JyeFJneeSTBcsW4&q=animals&limit=25&offset=0&rating=PG&lang=en"
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animals + "&api_key=pO6Zp341poKDj3yt9JyeFJneeSTBcsW4&q=animals&limit=25&offset=0&rating=PG&lang=en"
         
         $.ajax({
             url: queryURL,
